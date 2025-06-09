@@ -5,12 +5,12 @@
 
 import os
 
-import pkg_resources
+import importlib.resources
 
 
 class Configurations:
 
-    data_path = pkg_resources.resource_filename(__name__, "data")
+    data_path = str(importlib.resources.files(__package__).joinpath("data"))
     jisyo_hepburn_hira = "hepburnhira3.db"
     jisyo_passport_hira = "passporthira3.db"
     jisyo_kunrei_hira = "kunreihira3.db"
